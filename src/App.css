@@ -1,3 +1,32 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  overflow: hidden;
+}
+
+.image_container {
+  width: 100vw;
+  height: 100vh;
+}
+.time_container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.214);
+  padding: 10px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.time_container > span {
+  color: white;
+  font-size: 20px;
+}
+
+.time_container > h1 {
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px #ff0000;
 }
