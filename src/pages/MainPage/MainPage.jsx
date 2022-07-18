@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../MainPage/MainPage.css";
 import { useDate } from "../../hooks/useDate";
+import { Weather } from "../../components/Weather/Weather";
 
 const MainPage = () => {
   const initialValues = {
@@ -49,6 +50,7 @@ const MainPage = () => {
             </div>
           </div>
         </div>
+        <Weather />
       </div>
     </>
   );
