@@ -5,8 +5,8 @@ import { useDate } from "../../hooks/useDate";
 
 const MainPage = () => {
   const initialValues = {
-    content: "",
-    author: "",
+    content: "Source of Wisdom is Pain",
+    author: "Naval",
   };
   const [quote, setQuote] = useState(initialValues);
   const { date, time, wish } = useDate();
