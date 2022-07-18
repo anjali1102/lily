@@ -4,10 +4,16 @@ import "../MainPage/MainPage.css";
 import { useDate } from "../../hooks/useDate";
 
 const MainPage = () => {
-  const [quote, setQuote] = useState({ content: "", author: "" });
+  const initialValues = {
+    content: "",
+    author: "",
+  };
+  const [quote, setQuote] = useState(initialValues);
   const { date, time, wish } = useDate();
 
   let wallpaper = "https://source.unsplash.com/1920x1080/?wallpaper";
+
+  const { content, author } = quote;
 
   useEffect(() => {
     (async () => {
@@ -15,14 +21,12 @@ const MainPage = () => {
         let res = await axios.get(
           "https://api.quotable.io/random?maxLength=90"
         );
-        console.log(res);
         setQuote({
           content: res.data.content.slice(0, -1),
           author: res.data.author,
         });
-        console.log(quote);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     })();
   }, []);
@@ -37,9 +41,9 @@ const MainPage = () => {
           <span>{date}</span>
           <div className="quote_main_container">
             <div className="quote_container">
-              {!!quote.content && (
+              {!!content && (
                 <code>
-                  {quote.content} <i className="quote-i"> ~{quote.author}</i>
+                  {content} <i className="quote-i"> ~{author}</i>
                 </code>
               )}
             </div>
