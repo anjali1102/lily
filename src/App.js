@@ -1,9 +1,9 @@
-import "./App.css";
 import { MainPage } from "./pages/MainPage/MainPage";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MainPage />
     </div>
   );

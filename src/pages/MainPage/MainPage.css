@@ -1,0 +1,39 @@
+.image_container {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.time_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.time_container > span {
+  color: white;
+  font-size: 25px;
+}
+
+.time_container > h1 {
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px #ff0000;
+}
+
+.quote_container {
+  font-size: 17px;
+  background-color: rgba(0, 0, 0, 0.582);
+  color: wheat;
+  padding: 10px;
+  border-radius: 10px;
+}
+.quote-i {
+  color: #daffd4;
+  padding-left: 2px;
+  font-weight: 800;
+}
+
+.quote_main_container {
+  padding-top: 150px;
+
+}
