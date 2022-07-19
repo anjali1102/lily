@@ -4,8 +4,8 @@ import "./WeatherBody.css";
 const WeatherBody = ({ weatherData }) => {
   return (
     <div className="weather_body">
-      <h1>{~~weatherData.main.temp}°C</h1>
-      <h3>{weatherData.name}</h3>
+      <h6>{~~weatherData.main.temp}°C</h6>
+      <h6>{weatherData.name}</h6>
     </div>
   );
 };

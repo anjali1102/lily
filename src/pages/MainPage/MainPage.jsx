@@ -21,9 +21,21 @@ const MainPage = () => {
 
   const { content, author } = quote;
 
-  const editNameHandler = () => {
+  const mainFocusHandler = (e) => {
+    const focusInput =
+      e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+    localStorage.setItem("focus", focusInput);
+    setMainFocus(focusInput);
+  };
+
+  const editNameHandler = (e) => {
     setGreetName("");
     localStorage.setItem("username", "");
+  };
+
+  const editFocusHandler = (e) => {
+    setMainFocus("");
+    localStorage.setItem("mainFocus", "");
   };
 
   useEffect(() => {
@@ -56,6 +68,9 @@ const MainPage = () => {
             className="main-focus-input"
             type="text"
             placeholder="Enter your main focus"
+            onKeyDown={(e) =>
+              e.code === "Enter" && e.target.value !== "" && mainFocusHandler(e)
+            }
           />
         )}
       </div>
@@ -75,7 +90,14 @@ const MainPage = () => {
         </button>
       )}
       {mainFocus !== null && (
-        <button className="btn btn-focus">Edit Focus |</button>
+        <button
+          className="btn btn-focus"
+          onClick={() => {
+            editFocusHandler();
+          }}
+        >
+          Edit Focus |
+        </button>
       )}
     </div>
   );
