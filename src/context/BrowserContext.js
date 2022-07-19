@@ -4,9 +4,14 @@ const BrowserContext = createContext();
 
 const CommonProvider = ({ children }) => {
   const [greetName, setGreetName] = useState("");
-  const [mainFocus, setMainFocus] = useState("");
+
+  const [mainFocus, setMainFocus] = useState(
+    localStorage.getItem("focus") ?? ""
+  );
   return (
-    <BrowserContext.Provider value={{ greetName, mainFocus, setGreetName, setMainFocus }}>
+    <BrowserContext.Provider
+      value={{ greetName, mainFocus, setGreetName, setMainFocus }}
+    >
       {children}
     </BrowserContext.Provider>
   );

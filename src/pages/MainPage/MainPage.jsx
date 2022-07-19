@@ -14,9 +14,7 @@ const MainPage = () => {
     author: "Naval",
   };
 
-  // const [greet, setGreetName] = useState("anjali");
   const [quote, setQuote] = useState(initialValues);
-  // const [mainFocus, setMainFocus] = useState("deafaultFocus");
   const { time, wish } = useDate();
 
   const { content, author } = quote;
