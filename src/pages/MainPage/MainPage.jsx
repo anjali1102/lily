@@ -3,18 +3,28 @@ import axios from "axios";
 import "../MainPage/MainPage.css";
 import { useDate } from "../../hooks/useDate";
 import { Weather } from "../../components/Weather/Weather";
+import { useBrowserContext } from "../../context/BrowserContext";
 
 const MainPage = () => {
+  const { greetName, setGreetName, mainFocus, setMainFocus } =
+    useBrowserContext();
+
   const initialValues = {
     content: "Source of Wisdom is Pain",
     author: "Naval",
   };
-  const [quote, setQuote] = useState(initialValues);
-  const { date, time, wish } = useDate();
 
-  let wallpaper = "https://source.unsplash.com/1920x1080/?wallpaper";
+  // const [greet, setGreetName] = useState("anjali");
+  const [quote, setQuote] = useState(initialValues);
+  // const [mainFocus, setMainFocus] = useState("deafaultFocus");
+  const { time, wish } = useDate();
 
   const { content, author } = quote;
+
+  const editNameHandler = () => {
+    setGreetName("");
+    localStorage.setItem("username", "");
+  };
 
   useEffect(() => {
     (async () => {
@@ -33,26 +43,41 @@ const MainPage = () => {
   }, []);
 
   return (
-    <>
-      <div className="App">
-        <img src={wallpaper} className="image_container" alt="wallpaper" />
-        <div className="time_container">
-          <span>{wish}</span>
-          <h1>{time}</h1>
-          <span>{date}</span>
-          <div className="quote_main_container">
-            <div className="quote_container">
-              {!!content && (
-                <code>
-                  {content} <i className="quote-i"> ~{author}</i>
-                </code>
-              )}
-            </div>
-          </div>
-        </div>
-        <Weather />
+    <div className="main-page-container">
+      <span className="time-cont">{time}</span>
+      <div className="greeting-wrapper">
+        <span className="greet-cont">{wish}</span> {greetName}.
       </div>
-    </>
+      <div className="main-focus-wrapper">
+        {mainFocus ? (
+          <div className="main-focus">My main focus is : {mainFocus} </div>
+        ) : (
+          <input
+            className="main-focus-input"
+            type="text"
+            placeholder="Enter your main focus"
+          />
+        )}
+      </div>
+      <div className="quote_main_container">
+        <div className="quote-content">{content}</div>
+        <div className="quote-author">{author}</div>
+      </div>
+      <Weather />
+      {greetName !== null && (
+        <button
+          className="btn btn-name"
+          onClick={() => {
+            editNameHandler();
+          }}
+        >
+          Edit Name
+        </button>
+      )}
+      {mainFocus !== null && (
+        <button className="btn btn-focus">Edit Focus |</button>
+      )}
+    </div>
   );
 };
 

@@ -1,39 +1,105 @@
-.image_container {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-.time_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.time_container > span {
-  color: white;
-  font-size: 25px;
+.main-page-container {
+  font-size: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.time_container > h1 {
+.time-wrapper {
+  font-size: 8rem;
+  text-shadow: 2px 2px rgb(203, 199, 199);
+}
+
+.time-cont {
+  color: white;
+  text-shadow: 2px 2px rgb(203, 199, 199);
+}
+
+.greeting-wrapper {
+  display: flex;
+  gap: 1rem;
+  color: white;
   font-size: 100px;
-  color: white;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 2px 2px rgb(177, 175, 175);
 }
 
-.quote_container {
-  font-size: 17px;
-  background-color: rgba(0, 0, 0, 0.582);
-  color: wheat;
-  padding: 10px;
-  border-radius: 10px;
-}
-.quote-i {
-  color: #daffd4;
-  padding-left: 2px;
-  font-weight: 800;
+.weather-wrapper {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 .quote_main_container {
-  padding-top: 150px;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.582);
+  border-radius: 10px;
+  color: wheat;
+  font-size: 17px;
+  padding: 10px;
+}
 
+.quote-content {
+  color: wheat;
+  font-size: 1rem;
+}
+
+.quote-author {
+  color: white;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.btn {
+  position: fixed;
+  bottom: 10px;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+.btn-name {
+  right: 10px;
+}
+
+.btn-focus {
+  right: 90px;
+}
+
+.btn:hover {
+  color: rgb(181, 109, 121);
+}
+.main-focus-input {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1.5px solid red;
+  margin: 1rem;
+  background-color: transparent;
+  color: white;
+}
+
+.main-focus-input:focus {
+  outline: none;
+}
+.main-focus {
+  font-size: 2rem;
+  margin: 1rem;
+  color: white;
+}
+.main-focus-input::placeholder {
+  color: rgb(150, 96, 96);
+}
+.date {
+  color: white;
+  font-size: 3rem;
 }

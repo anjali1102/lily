@@ -7,3 +7,11 @@
   overflow: hidden;
 }
 
+.app-container {
+  min-height: 100vh;
+}
+
+.wallpaper-container {
+  background-size: cover;
+  opacity: 0.7;
+}
