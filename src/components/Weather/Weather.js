@@ -5,7 +5,7 @@ import "./WeatherBody.css";
 const Weather = () => {
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
