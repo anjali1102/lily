@@ -21,8 +21,8 @@
   display: flex;
   gap: 1rem;
   color: white;
-  font-size: 100px;
-  text-shadow: 2px 2px rgb(177, 175, 175);
+  font-size: 4rem;
+  text-shadow: 2px 2px red;
 }
 
 .weather-wrapper {
@@ -70,14 +70,16 @@
 
 .btn-name {
   right: 10px;
+  text-shadow: 2px 2px rgb(231, 91, 91);
 }
 
 .btn-focus {
   right: 90px;
+  text-shadow: 2px 2px rgb(231, 91, 91);
 }
 
 .btn:hover {
-  color: rgb(181, 109, 121);
+  color: yellow;
 }
 .main-focus-input {
   padding: 1rem;
@@ -95,11 +97,8 @@
   font-size: 2rem;
   margin: 1rem;
   color: white;
+  text-shadow: 2px 2px red;
 }
 .main-focus-input::placeholder {
-  color: rgb(150, 96, 96);
-}
-.date {
   color: white;
-  font-size: 3rem;
 }
